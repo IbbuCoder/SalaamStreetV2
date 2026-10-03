@@ -2,6 +2,8 @@ import { defineConfig } from 'vitest/config';
 import react from '@vitejs/plugin-react';
 
 export default defineConfig({
+  // Served from a sub-path on GitHub Pages (e.g. BASE_PATH=/SalaamStreetV2/).
+  base: process.env.BASE_PATH ?? '/',
   plugins: [react()],
   build: {
     target: 'es2020',

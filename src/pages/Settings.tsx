@@ -339,7 +339,7 @@ function GeneralSection() {
   const clear = () => {
     if (window.confirm('Delete all SalaamStreet data from this device? This removes your location, tracker history, bookmarks and preferences.')) {
       clearAll();
-      window.location.assign('/');
+      window.location.assign(import.meta.env.BASE_URL);
     }
   };
   const resetPrefs = () => {

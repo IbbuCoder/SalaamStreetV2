@@ -36,7 +36,7 @@ export function App() {
   return (
     <SettingsProvider>
       <ToastProvider>
-        <BrowserRouter>
+        <BrowserRouter basename={import.meta.env.BASE_URL.replace(/\/$/, '') || '/'}>
           <ScrollToTop />
           <Routes>
             <Route element={<Layout />}>

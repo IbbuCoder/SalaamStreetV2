@@ -1,12 +1,14 @@
 // SalaamStreet service worker: keeps the app usable offline.
 // - Navigations: network first, falling back to the cached app shell.
 // - Built assets (/assets/*, hashed) and Quran data: cache first.
-const VERSION = 'v1';
+const VERSION = 'v2';
 const SHELL = `ss-shell-${VERSION}`;
 const RUNTIME = `ss-runtime-${VERSION}`;
+// The app may live at a sub-path (e.g. GitHub Pages); everything is relative to the SW scope.
+const BASE = new URL(self.registration.scope).pathname;
 
 self.addEventListener('install', (event) => {
-  event.waitUntil(caches.open(SHELL).then((c) => c.addAll(['/', '/manifest.webmanifest', '/icons/icon.svg'])));
+  event.waitUntil(caches.open(SHELL).then((c) => c.addAll([BASE, `${BASE}manifest.webmanifest`, `${BASE}icons/icon.svg`])));
   self.skipWaiting();
 });
 
@@ -30,15 +32,16 @@ self.addEventListener('fetch', (event) => {
       fetch(req)
         .then((res) => {
           const copy = res.clone();
-          caches.open(SHELL).then((c) => c.put('/', copy));
+          caches.open(SHELL).then((c) => c.put(BASE, copy));
           return res;
         })
-        .catch(() => caches.match('/')),
+        .catch(() => caches.match(BASE)),
     );
     return;
   }
 
-  if (url.pathname.startsWith('/assets/') || url.pathname.startsWith('/data/') || url.pathname.startsWith('/icons/')) {
+  const path = url.pathname.slice(BASE.length - 1);
+  if (path.startsWith('/assets/') || path.startsWith('/data/') || path.startsWith('/icons/')) {
     event.respondWith(
       caches.match(req).then(
         (hit) =>
