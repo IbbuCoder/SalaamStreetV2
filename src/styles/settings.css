@@ -1,0 +1,194 @@
+.set-group {
+  margin-top: 28px;
+  scroll-margin-top: 80px;
+}
+
+.set-group:first-of-type {
+  margin-top: 4px;
+}
+
+.set-group__title {
+  font-family: var(--font-sans);
+  font-size: 0.8rem;
+  font-weight: 700;
+  letter-spacing: 0.07em;
+  text-transform: uppercase;
+  color: var(--ink-3);
+  margin: 0 4px 4px;
+}
+
+.set-group__desc {
+  color: var(--ink-3);
+  font-size: 0.9rem;
+  margin: 0 4px 8px;
+}
+
+.set-card {
+  overflow: hidden;
+}
+
+.set-pad {
+  padding: 18px;
+}
+
+.set-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  padding: 14px 18px;
+  min-height: 60px;
+  border-top: 1px solid var(--line);
+}
+
+.set-row:first-child {
+  border-top: 0;
+}
+
+.set-row--stacked {
+  display: grid;
+  justify-content: stretch;
+  gap: 8px;
+}
+
+.set-row--stacked .segmented {
+  justify-self: start;
+}
+
+.set-row__label {
+  display: grid;
+  gap: 2px;
+  min-width: 0;
+}
+
+.set-row .label,
+.set-row label {
+  font-weight: 600;
+}
+
+.set-row .hint {
+  color: var(--ink-3);
+  font-size: 0.85rem;
+  font-weight: 400;
+}
+
+.set-row--link {
+  color: var(--ink);
+  text-decoration: none;
+}
+
+.set-row--link:hover {
+  background: var(--surface-2);
+}
+
+.set-row--link svg {
+  color: var(--ink-3);
+  flex: none;
+}
+
+.select--auto {
+  width: auto;
+  min-width: 130px;
+}
+
+.cancel-btn {
+  margin-top: 8px;
+}
+
+.adj-head {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.adj-list,
+.notif-list {
+  list-style: none;
+  margin: 4px 0 0;
+  padding: 0;
+}
+
+.adj-list li,
+.notif-list li {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  min-height: 52px;
+  border-top: 1px solid var(--line);
+}
+
+.adj-list li:first-child,
+.notif-list li:first-child {
+  border-top: 0;
+}
+
+.notif-list label {
+  font-weight: 500;
+  color: var(--ink-3);
+}
+
+.stepper {
+  display: inline-flex;
+  align-items: center;
+  border: 1px solid var(--line-strong);
+  border-radius: 12px;
+  overflow: hidden;
+  flex: none;
+}
+
+.stepper button {
+  display: grid;
+  place-items: center;
+  width: 44px;
+  height: 42px;
+  border: 0;
+  background: var(--surface);
+  color: var(--ink);
+}
+
+.stepper button:hover:not(:disabled) {
+  background: var(--surface-2);
+}
+
+.stepper button:disabled {
+  color: var(--ink-3);
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.stepper output {
+  min-width: 64px;
+  text-align: center;
+  font-weight: 600;
+  font-variant-numeric: tabular-nums;
+  font-size: 0.92rem;
+  border-left: 1px solid var(--line);
+  border-right: 1px solid var(--line);
+  line-height: 42px;
+}
+
+.soon {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+  padding: 10px 12px;
+  border-radius: 10px;
+  background: var(--accent-soft);
+  font-size: 0.92rem;
+}
+
+.soon svg {
+  color: var(--accent);
+  flex: none;
+  margin-top: 2px;
+}
+
+.btn-danger {
+  color: var(--danger);
+  border-color: color-mix(in srgb, var(--danger) 40%, transparent);
+}
+
+.btn-danger:hover {
+  background: var(--danger-soft);
+}

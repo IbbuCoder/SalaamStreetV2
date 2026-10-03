@@ -1,0 +1,259 @@
+.cal-layout {
+  display: grid;
+  gap: 16px;
+}
+
+@media (min-width: 960px) {
+  .cal-layout {
+    grid-template-columns: minmax(0, 1.25fr) minmax(0, 1fr);
+    align-items: start;
+    gap: 24px;
+  }
+}
+
+.cal {
+  padding: 12px 12px 16px;
+}
+
+@media (min-width: 768px) {
+  .cal {
+    padding: 16px 20px 20px;
+  }
+}
+
+.cal__head {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 8px;
+}
+
+.cal__title {
+  text-align: center;
+}
+
+.cal__title h2 {
+  font-size: 1.3rem;
+}
+
+.cal__ar {
+  font-size: 1.05rem;
+}
+
+.cal__today {
+  display: flex;
+  margin: 2px auto 0;
+}
+
+.cal__grid {
+  margin-top: 12px;
+}
+
+.cal__row {
+  display: grid;
+  grid-template-columns: repeat(7, minmax(0, 1fr));
+  gap: 4px;
+  margin-top: 4px;
+}
+
+.cal__row--head span {
+  text-align: center;
+  font-size: 0.75rem;
+  font-weight: 700;
+  color: var(--ink-3);
+  padding: 4px 0;
+}
+
+.cal__row--head .is-fri {
+  color: var(--primary);
+}
+
+.cal__cell {
+  position: relative;
+  display: grid;
+  align-content: center;
+  justify-items: center;
+  min-height: 52px;
+  border-radius: 10px;
+  background: var(--surface-2);
+  font-variant-numeric: tabular-nums;
+}
+
+@media (min-width: 768px) {
+  .cal__cell {
+    min-height: 64px;
+  }
+}
+
+.cal__cell.is-empty {
+  background: transparent;
+}
+
+.cal__h {
+  font-weight: 700;
+  font-size: 1.05rem;
+  line-height: 1.1;
+}
+
+.cal__g {
+  font-size: 0.72rem;
+  color: var(--ink-3);
+}
+
+.cal__cell.is-today {
+  background: var(--primary);
+  color: var(--primary-ink);
+}
+
+.cal__cell.is-today .cal__g {
+  color: inherit;
+  opacity: 0.8;
+}
+
+.cal__cell.has-event:not(.is-today) {
+  background: var(--accent-soft);
+}
+
+.cal__dot {
+  display: inline-block;
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: var(--accent);
+}
+
+.cal__cell .cal__dot {
+  position: absolute;
+  top: 6px;
+  right: 6px;
+}
+
+.cal__cell.is-today .cal__dot {
+  background: var(--primary-ink);
+}
+
+.cal__legend {
+  list-style: none;
+  margin: 14px 0 0;
+  padding: 12px 4px 0;
+  border-top: 1px solid var(--line);
+  display: grid;
+  gap: 6px;
+  font-size: 0.9rem;
+  color: var(--ink-2);
+}
+
+.cal__legend .cal__dot {
+  margin-right: 6px;
+  vertical-align: middle;
+}
+
+.events {
+  list-style: none;
+  margin: 0;
+  padding: 0 18px 8px;
+}
+
+.events li {
+  display: grid;
+  grid-template-columns: 96px 1fr;
+  gap: 14px;
+  padding: 14px 0;
+  border-top: 1px solid var(--line);
+}
+
+.events li:first-child {
+  border-top: 0;
+}
+
+.events__when {
+  display: grid;
+  align-content: start;
+}
+
+.events__date {
+  font-weight: 700;
+  font-size: 0.9rem;
+}
+
+.events__in {
+  color: var(--ink-3);
+  font-size: 0.82rem;
+}
+
+.events__name {
+  font-weight: 700;
+}
+
+.events__h {
+  color: var(--accent);
+  font-size: 0.85rem;
+  font-weight: 600;
+}
+
+.events__desc {
+  color: var(--ink-2);
+  font-size: 0.92rem;
+  margin-top: 4px;
+}
+
+.events__caution {
+  color: var(--ink-3);
+  font-size: 0.85rem;
+  font-style: italic;
+  margin-top: 4px;
+}
+
+.months {
+  list-style: none;
+  margin: 0 0 10px;
+  padding: 0;
+  display: grid;
+  gap: 8px;
+}
+
+@media (min-width: 640px) {
+  .months {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (min-width: 1100px) {
+  .months {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+}
+
+.months li {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  min-height: 52px;
+  padding: 8px 14px;
+  border-radius: 12px;
+  background: var(--surface);
+  border: 1px solid var(--line);
+}
+
+.months li.is-current {
+  border-color: var(--primary);
+  box-shadow: inset 0 0 0 1px var(--primary);
+}
+
+.months__n {
+  width: 22px;
+  color: var(--ink-3);
+  font-weight: 700;
+  font-size: 0.85rem;
+  font-variant-numeric: tabular-nums;
+}
+
+.months__name {
+  font-weight: 600;
+}
+
+.months__ar {
+  margin-left: auto;
+  color: var(--ink-2);
+  font-size: 1.1rem;
+}

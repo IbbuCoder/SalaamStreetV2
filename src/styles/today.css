@@ -1,0 +1,158 @@
+.loc-chip {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  min-height: 32px;
+  color: var(--accent);
+  text-decoration: none;
+  text-transform: none;
+  letter-spacing: 0.02em;
+  font-size: 0.85rem;
+}
+
+.loc-chip:hover {
+  text-decoration: underline;
+}
+
+.today-grid {
+  display: grid;
+  gap: 16px;
+}
+
+.today-main {
+  display: grid;
+  gap: 16px;
+  align-content: start;
+}
+
+.today-side {
+  display: grid;
+  gap: 12px;
+  align-content: start;
+}
+
+@media (min-width: 960px) {
+  .today-grid {
+    grid-template-columns: minmax(0, 1.5fr) minmax(280px, 1fr);
+    gap: 24px;
+  }
+}
+
+.welcome h2 {
+  font-size: 1.35rem;
+  margin-bottom: 6px;
+}
+
+.welcome > p {
+  margin-bottom: 18px;
+}
+
+.card-head {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  padding: 16px 18px 6px;
+}
+
+.card-head h2 {
+  font-size: 1.15rem;
+}
+
+.card-foot {
+  padding: 4px 18px 14px;
+}
+
+.progress-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font-weight: 700;
+  font-size: 0.85rem;
+  color: var(--ink-2);
+  font-variant-numeric: tabular-nums;
+}
+
+.progress-dots {
+  display: inline-flex;
+  gap: 4px;
+}
+
+.progress-dots span {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  border: 1.5px solid var(--line-strong);
+}
+
+.progress-dots span.on {
+  background: var(--primary);
+  border-color: var(--primary);
+}
+
+.quick {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 10px;
+}
+
+.quick__item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+  padding: 14px 4px 12px;
+  border-radius: var(--radius);
+  background: var(--surface);
+  border: 1px solid var(--line);
+  color: var(--ink);
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 0.88rem;
+}
+
+.quick__item:hover {
+  border-color: var(--line-strong);
+  background: var(--surface-2);
+}
+
+.side-card {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  padding: 14px 16px;
+  color: var(--ink);
+  text-decoration: none;
+  min-height: 68px;
+}
+
+.side-card:hover {
+  border-color: var(--line-strong);
+}
+
+.side-card__text {
+  display: grid;
+  min-width: 0;
+}
+
+.side-card__k {
+  font-weight: 600;
+}
+
+.side-card__v {
+  color: var(--ink-2);
+  font-size: 0.9rem;
+}
+
+.side-card .chev {
+  margin-left: auto;
+  width: 18px;
+  height: 18px;
+  color: var(--ink-3);
+  flex: none;
+}
+
+.tile-icon--accent {
+  background: var(--accent-soft);
+  color: var(--accent);
+}

@@ -1,0 +1,158 @@
+.tracker-head {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  padding: 18px 18px 8px;
+}
+
+.tracker-progress {
+  position: relative;
+  width: 64px;
+  height: 64px;
+  flex: none;
+}
+
+.tracker-progress svg {
+  width: 64px;
+  height: 64px;
+  transform: rotate(-90deg);
+}
+
+.tracker-progress circle {
+  fill: none;
+  stroke-width: 3.5;
+}
+
+.ring-bg {
+  stroke: var(--surface-2);
+}
+
+.ring-fg {
+  stroke: var(--primary);
+  stroke-linecap: round;
+  transition: stroke-dasharray 0.3s ease;
+}
+
+.tracker-progress > span {
+  position: absolute;
+  inset: 0;
+  display: grid;
+  place-items: center;
+  font-weight: 700;
+  font-size: 1.1rem;
+  font-variant-numeric: tabular-nums;
+}
+
+.tracker-progress small {
+  font-size: 0.7em;
+  color: var(--ink-3);
+}
+
+.tracker-progress > span {
+  display: flex;
+  align-items: baseline;
+  justify-content: center;
+  padding-top: 20px;
+}
+
+.tracker-list {
+  list-style: none;
+  margin: 0;
+  padding: 4px 18px 10px;
+}
+
+.tracker-list li {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  min-height: 64px;
+  border-top: 1px solid var(--line);
+}
+
+.tracker-list li:first-child {
+  border-top: 0;
+}
+
+.tracker-name {
+  font-weight: 600;
+  font-size: 1.08rem;
+}
+
+.history-table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.history-table th,
+.history-table td {
+  padding: 4px;
+  text-align: center;
+}
+
+.history-table thead th {
+  padding-top: 12px;
+  color: var(--ink-3);
+  font-size: 0.8rem;
+  font-weight: 600;
+}
+
+.history-table abbr {
+  text-decoration: none;
+}
+
+.history-table tbody th {
+  text-align: left;
+  font-weight: 500;
+  font-size: 0.88rem;
+  white-space: nowrap;
+  padding-left: 12px;
+}
+
+.history-table tbody tr {
+  border-top: 1px solid var(--line);
+}
+
+.hist-cell {
+  display: inline-grid;
+  place-items: center;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  border: 0;
+  background: transparent;
+  color: var(--ink-3);
+}
+
+.hist-cell svg {
+  width: 16px;
+  height: 16px;
+}
+
+.hist-cell--none svg {
+  width: 12px;
+  height: 12px;
+  opacity: 0.5;
+}
+
+.hist-cell--done {
+  color: var(--primary);
+}
+
+.hist-cell--done svg {
+  width: 20px;
+  height: 20px;
+}
+
+.hist-cell--missed {
+  color: var(--danger);
+}
+
+.hist-cell:hover {
+  background: var(--surface-2);
+}
+
+.history-note {
+  margin-top: 8px;
+}
